@@ -3,8 +3,8 @@
 
 function check # check if guess is too high or too low
 {
-	local files=$(ls -la|egrep "^\-[^d]"|wc -l)
-	# list all the content of directory (including hidden ones), separate the files from directories, count the files
+	local files=$(ls -1A|wc -l)
+	# list one file per line (including hidden ones), count the files
 	if [ $1 -gt $files ] # if guess is too high
 		then echo "1"
 	elif [ $1 -lt $files ] # if guess is too low
